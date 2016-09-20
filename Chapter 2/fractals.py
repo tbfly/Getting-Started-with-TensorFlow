@@ -1,4 +1,4 @@
- Import libraries for simulation
+#Import libraries for simulation
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,10 +40,5 @@ for i in range(200): step.run()
 
 plt.imshow(ns.eval())
 plt.show()
-
-
-
-
-
 
 

@@ -8,6 +8,11 @@ print tensor_1d[0]
 
 print tensor_1d[2]
 
+print tensor_1d.ndim
+print tensor_1d.shape
+print tensor_1d.dtype
+
+
 import tensorflow as tf
 
 tf_tensor = tf.convert_to_tensor(tensor_1d, dtype=tf.float64)
@@ -24,6 +29,8 @@ print tensor_2d
 print tensor_2d[3][3]
 print tensor_2d[0:2,0:2]
 
-tf_tensor=tf.placeholder("float64",tensor_2d,name='x')
+#tf_tensor=tf.placeholder("float64",tensor_2d,name='x')
+tf_tensor = tf.convert_to_tensor(tensor_2d, dtype=tf.float64)
 with tf.Session() as sess:
-    print sess.run(x)
+    #print sess.run(x)
+    print sess.run(tf_tensor)
