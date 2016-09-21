@@ -1,7 +1,8 @@
 #Import libraries for simulation
 import tensorflow as tf
 import numpy as np
-from pde_lib import *
+import matplotlib.pyplot as plt
+#from pde_lib import *
 
 
   
@@ -72,7 +73,8 @@ for i in range(1000):
   step.run({eps: 0.03, damping: 0.04})
   # Visualize every 50 steps
   if i % 500 == 0:
-      clear_output()
+#      clear_output()
+      print(chr(27) + "[2J")
       plt.imshow(U.eval())
       plt.show()
 
