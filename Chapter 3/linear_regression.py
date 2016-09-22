@@ -18,6 +18,9 @@ plt.plot(x_point,y_point, 'o', label='Input Data')
 plt.legend()
 plt.show()
 
+
+
+#Cost functions and gradient descent
 import tensorflow as tf
 
 
