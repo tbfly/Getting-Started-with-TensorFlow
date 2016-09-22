@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import tensorflow as tf
 import input_data
@@ -6,8 +8,8 @@ import input_data
 
 mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
 
-train_pixels,train_list_values = mnist.train.next_batch(100) 
-test_pixels,test_list_of_values  = mnist.test.next_batch(10) 
+train_pixels,train_list_values = mnist.train.next_batch(100)
+test_pixels,test_list_of_values = mnist.test.next_batch(10)
 
 
 train_pixel_tensor = tf.placeholder\
@@ -35,7 +37,7 @@ with tf.Session() as sess:
         nn_index = sess.run(pred,\
 		feed_dict={train_pixel_tensor:train_pixels,\
 		test_pixel_tensor:test_pixels[i,:]})
-        print "Test N° ", i,"Predicted Class: ", \
+        print "Test N? ", i,"Predicted Class: ", \
 		np.argmax(train_list_values[nn_index]),\
 		"True Class: ", np.argmax(test_list_of_values[i])
         if np.argmax(train_list_values[nn_index])\
